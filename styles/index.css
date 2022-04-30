@@ -1,0 +1,68 @@
+
+      @font-face {
+        font-family: "Minecraft";
+        src: url(./font/Minecraft.woff);
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: url(https://cdn.mos.cms.futurecdn.net/52K7sgnQLSJ8ggfyfvz9yB.jpg)
+          center center/cover no-repeat;
+          font-family: "Minecraft";
+      }
+
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        flex-direction: column;
+        gap: 2vmin;
+      }
+
+      #buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1vmin;
+        padding-top: 40vmin;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        all: unset;
+        width: 32vmin;
+        height: 10vmin;
+        background-color: black;
+        text-align: center;
+        color: white;
+
+        font-size: 4vmin;
+        cursor: pointer;
+      }
+
+      button:hover {
+        border: white solid 0.25vmin;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      article {
+        text-align: center;
+        background-color: white;
+        color: black;
+        padding: 1vmin;
+        height: 20vmin;
+        width: 50vmin;
+        font-size: 2.5vmin;
+      }
+
+      [data-display="false"] {
+        display: none;
+      }
+      [data-display="true"] {
+        display: block;
+      }

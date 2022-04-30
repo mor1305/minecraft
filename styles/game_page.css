@@ -14,7 +14,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin: 0;
 }
 
@@ -32,7 +31,7 @@ body::after {
 
 #game-board {
   /* background-color: #c9f6ff; */
-  background-color: #dbf3fa;
+  /* background-color: #dbf3fa; */
   background-color: #b7e9f7;
   width: 100vmin;
   height: 100vmin;
@@ -50,7 +49,7 @@ aside {
   height: 100vmin;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   /* gap: 20px; */
   align-items: center;
 }
@@ -62,21 +61,15 @@ aside span {
   font-size: 2.5vmin;
 }
 
-#toolkit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2vmin;
-  }
-
-#inventory-container {
+#inventory-container, #toolkit-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1vmin;
 }
 
-#inventory {
+#inventory, #toolkit {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -84,12 +77,22 @@ aside span {
   gap: 2vmin;
 }
 
-#inventory div {
+#inventory div, #toolkit div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5vmin;
+}
+
+#reset {
+  text-align: center;
+  width: 14vmin;
+  height: 5vmin;
+  margin: 2vmin;
+  background-color: black;
+  color: white;
+  font-size: 2.5vmin;
 }
 
 button {
@@ -101,6 +104,10 @@ button {
   border: 0.22vmin solid black;
 }
 
+.game-element {
+  cursor: pointer;
+
+}
 .selected-tool {
   border: 0.22vmin solid red;
 }
@@ -140,4 +147,8 @@ button {
 
 .wood, #wood {
   background: url(./img/wood.png) no-repeat center center/cover;
+}
+
+.sky {
+  background-color: #87ceeb;
 }

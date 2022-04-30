@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minecraft</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="/game.js" defer type="module"></script>
+    <link rel="stylesheet" href="./styles/game_page.css" />
+    <link rel="icon" href="./styles/img/favicon.ico" type="image/x-icon" />
+    <script src="./js/game.js" defer type="module"></script>
   </head>
   <body>
     <aside>
-      <div id="toolkit">
+      <div id="toolkit-container">
         <p>Tools</p>
-        <button class="tool" id="axe"></button>
-        <span class="title">Axe</span>
-        <button class="tool" id="pickaxe"></button>
-        <span class="title">Pickaxe</span>
-        <button class="tool" id="shovel"></button>
-        <span class="title">Shovel</span>
+        <div id="toolkit">
+          <div>
+            <button class="tool" id="axe"></button>
+            <span class="title">Axe</span>
+          </div>
+          <div>
+            <button class="tool" id="pickaxe"></button>
+            <span class="title">Pickaxe</span>
+          </div>
+          <div>
+            <button class="tool" id="shovel"></button>
+            <span class="title">Shovel</span>
+          </div>
+        </div>
       </div>
       <div id="inventory-container">
         <p>Inventory</p>
@@ -44,6 +53,7 @@
           </div>
         </div>
       </div>
+      <button id="reset">RESET</button>
     </aside>
     <div id="game-board"></div>
   </body>

@@ -4,6 +4,21 @@ const elementsObject = {
   2: "leaves",
   3: "stone",
   4: "wood",
+  9: "sky",
+};
+
+const elementsAndToolsObject = {
+  shovel: ["dirt", "grass"],
+  axe: ["leaves", "wood"],
+  pickaxe: ["stone"],
+};
+
+const elementsAndInventoryObject = {
+  dirt: "dirt",
+  grass: "grass",
+  leaves: "leaves",
+  stone: "stone",
+  wood: "wood",
 };
 
 const myArray = [
@@ -30,7 +45,6 @@ const myArray = [
 ];
 
 let currentTool = null;
-let currentElement = null;
 
 export function drawBoard(gameBoard) {
   for (let i = 0; i < myArray.length; i++) {
@@ -49,8 +63,8 @@ export function drawElement(gameBoard, elementCode, x, y) {
   gameBoard.appendChild(boardElement);
 }
 
-let tools = document.querySelectorAll("button");
 export function initTools() {
+  let tools = document.querySelectorAll("button");
   tools.forEach((tool) => {
     tool.addEventListener("click", chooseTool);
     tool.addEventListener("mouseover", hover);
@@ -78,7 +92,6 @@ function chooseTool(event) {
     event.target.classList.add("selected-tool");
     currentTool = event.target;
   }
-  console.log(currentTool);
 }
 
 export function initElements() {
@@ -91,15 +104,42 @@ export function initElements() {
 }
 
 function chooseElement(event) {
-  if (currentElement === null) {
-    let currentElementClass = event.target.classList[0];
-    console.log(currentElementClass);
-    event.target.classList.remove(event.target.classList[0]);
-    let currentInventory = document.getElementById(currentElementClass);
-    let currentInventoryValue = currentInventory.nextElementSibling.innerHTML;
-    let parsedValue = parseInt(currentInventoryValue);
-    parsedValue++;
-    currentInventory.nextElementSibling.innerHTML = parsedValue;
-    console.log(typeof parsedValue);
+  let currentElement = event.target.classList[0];
+  if (currentElement !== "sky" && currentTool) {
+    if (elementsAndToolsObject[currentTool.id].includes(currentElement)) {
+      addElementToInventory(event.target);
+    }
+  } else if (currentElement === "sky" && currentTool) {
+    let elementInventory = parseInt(currentTool.nextElementSibling.innerHTML);
+    if (elementInventory > 0) {
+      drawElementFromInventory(event.target, elementInventory);
+      elementInventory--;
+      currentTool.nextElementSibling.innerHTML = elementInventory;
+    }
   }
+}
+
+function addElementToInventory(element) {
+  let currentElementClass = element.classList[0];
+  element.classList.remove(element.classList[0]);
+  element.className = "sky";
+  element.classList.add("game-element");
+  let currentInventory = document.getElementById(currentElementClass);
+  let currentInventoryValue = parseInt(
+    currentInventory.nextElementSibling.innerHTML
+  );
+  currentInventoryValue++;
+  currentInventory.nextElementSibling.innerHTML = currentInventoryValue;
+}
+
+function drawElementFromInventory(element, elementInventory) {
+  element.className = currentTool.id;
+  element.classList.add("game-element");
+}
+
+export function resetGame() {
+  let reset = document.getElementById("reset");
+  reset.addEventListener("click", () => {
+    window.location.reload();
+  });
 }
