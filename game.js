@@ -1,4 +1,4 @@
-import { drawBoard } from "./minecraft.js";
+import { drawBoard, initTools, initElements } from "./minecraft.js";
 
 const gameBoard = document.getElementById("game-board");
 
@@ -8,6 +8,8 @@ function draw() {
 
 function main() {
   draw();
+  initTools();
+  initElements();
 }
 
 // window.requestAnimationFrame(main);

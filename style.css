@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin: 0;
 }
 
@@ -33,7 +34,7 @@ body::after {
   /* background-color: #c9f6ff; */
   background-color: #dbf3fa;
   background-color: #b7e9f7;
-  width: 90vmin;
+  width: 100vmin;
   height: 100vmin;
   display: grid;
   grid-template-rows: repeat(20, 1fr);
@@ -49,7 +50,8 @@ aside {
   height: 100vmin;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-between; */
+  /* gap: 20px; */
   align-items: center;
 }
 
@@ -65,55 +67,77 @@ aside span {
   flex-direction: column;
   align-items: center;
   gap: 2vmin;
+  }
+
+#inventory-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.tool {
+#inventory {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2vmin;
+}
+
+#inventory div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vmin;
+}
+
+button {
   all: unset;
-  width: 10vmin;
-  height: 10vmin;
+  width: 7vmin;
+  height: 7vmin;
   background-color: #cccdc6;
   cursor: pointer;
   border: 0.22vmin solid black;
 }
 
-.image {
-  width: 10vmin;
-  height: 10vmin;
+.selected-tool {
+  border: 0.22vmin solid red;
 }
 
-#axe .image {
+.hovered-tool {
+  border: 0.25vmin solid white;
+
+}
+
+#axe {
   background: url(./img/axe.png) center/cover no-repeat;
 }
 
-#pickaxe .image {
+#pickaxe {
   background: url(./img/pickaxe.png) center/cover no-repeat;
 }
 
-#shovel .image {
+#shovel {
   background: url(./img/shovel.png) center/cover no-repeat;
 }
 
-.dirt {
+.dirt, #dirt {
   background: url(./img/dirt.png) no-repeat center center/cover;
 }
 
-.grass {
+.grass, #grass {
   background: url(./img/grass.png) no-repeat center center/cover;
 }
 
-.leaves {
+.leaves, #leaves {
   background: url(./img/leaves.png) no-repeat center center/cover;
 }
 
-.stone {
+.stone, #stone {
   background: url(./img/stone.png) no-repeat center center/cover;
 }
 
-.wood {
+.wood, #wood {
   background: url(./img/wood.png) no-repeat center center/cover;
-}
-
-.food {
-  background-color: hsl(50, 100%, 50%);
-  /* border: 0.25vmin solid black; */
 }
