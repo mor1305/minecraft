@@ -19,8 +19,8 @@ body {
 
 body::after {
   content: "";
-  background: url(./img/dirt.png);
-  opacity: 0.7;
+  background: url(https://wallpapercave.com/wp/wp2868363.jpg) center center/cover no-repeat;
+  opacity: 0.65;
   top: 0;
   left: 0;
   bottom: 0;
@@ -30,9 +30,8 @@ body::after {
 }
 
 #game-board {
-  /* background-color: #c9f6ff; */
-  /* background-color: #dbf3fa; */
-  background-color: #b7e9f7;
+  background-color: #87ceeb;
+ 
   width: 100vmin;
   height: 100vmin;
   display: grid;
@@ -42,15 +41,11 @@ body::after {
 }
 
 aside {
-  background-color: #cccdc6;
-  /* background-color: #e8e9eb; */
-  /* background-color: #f5fcff; */
   width: 30vmin;
   height: 100vmin;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* gap: 20px; */
   align-items: center;
 }
 
@@ -102,6 +97,7 @@ button {
   background-color: #cccdc6;
   cursor: pointer;
   border: 0.22vmin solid black;
+  border-radius: 5px;
 }
 
 .game-element {

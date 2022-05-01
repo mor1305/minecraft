@@ -7,25 +7,30 @@
       body {
         height: 100vh;
         width: 100vw;
-        background: url(https://cdn.mos.cms.futurecdn.net/52K7sgnQLSJ8ggfyfvz9yB.jpg)
-          center center/cover no-repeat;
-          font-family: "Minecraft";
+        background: url(https://wallpapercave.com/wp/wp2868363.jpg) center center/cover no-repeat;
+        font-family: "Minecraft";
+      }
+
+      #logo {
+        height: 20vmin;
+        width: 80vmin;
+        background: url(./img/logo.png) center center/cover no-repeat;
       }
 
       #container {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-      
         flex-direction: column;
         gap: 2vmin;
+        margin-top: 10vmin;
       }
 
       #buttons {
         display: flex;
         flex-direction: column;
         gap: 1vmin;
-        padding-top: 40vmin;
+        padding-top: 20vmin;
         justify-content: center;
         align-items: center;
       }
@@ -37,7 +42,6 @@
         background-color: black;
         text-align: center;
         color: white;
-
         font-size: 4vmin;
         cursor: pointer;
       }
@@ -63,6 +67,7 @@
       [data-display="false"] {
         display: none;
       }
+      
       [data-display="true"] {
         display: block;
       }
